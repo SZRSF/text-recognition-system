@@ -1,6 +1,5 @@
 from flask import Blueprint, request, jsonify
 
-import apps
 from apps.model import User
 from ext import db
 

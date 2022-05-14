@@ -7,7 +7,6 @@ from ext import db
 
 app = create_app()
 
-
 manager = Manager(app=app)
 
 migrate = Migrate(app=app, db=db)
