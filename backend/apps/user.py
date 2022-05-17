@@ -1,9 +1,14 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, render_template
 
 from apps.model import User
 from ext import db
 
 user_bp = Blueprint('user', __name__)
+
+
+@user_bp.route('/')
+def index():
+    return render_template('index.html')
 
 
 # 注册
