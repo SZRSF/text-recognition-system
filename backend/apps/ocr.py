@@ -2,13 +2,10 @@ import base64
 import io
 import json
 import os
-import random
-import string
 import time
 import urllib.parse
 import urllib.request
 
-import numpy as np
 from PIL import Image
 from flask import Blueprint, request, json
 
