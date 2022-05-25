@@ -9,6 +9,7 @@ import urllib.request
 from PIL import Image
 from flask import Blueprint, request, json
 
+from apps.listen import multiruntest
 from apps.model import Picture
 from ext import db
 
@@ -40,7 +41,8 @@ def posturl(url, data={}):
 @ocr_bp.route('/api/general_ocr', methods=['POST'])
 def general_ocr():
     # 获取前端传过来的base64图片格式
-    upload_image = request.form['srcBase']
+    upload_image = request.form['image']
+    print(upload_image)
     # 获取前端传过来的文件名
     filename = request.form['filename']
     # 将base64图片格式转码
@@ -71,13 +73,16 @@ def general_ocr():
     # 就可以按key取值了
     result = jos['content']
     print('识别的结果：', result)
+    txt = result
+    multiruntest(txt)
 
     # 1.找到模型并创建对象
     picture = Picture()
     # 2.给对象属性赋值
     picture.picUrl = url
     picture.OCR_txt=result
-    picture.author_id="3"
+    picture.author_id= uid
+
     # 3.将picture对象添加到session中（类似缓存)
     db.session.add(picture)
     # 4.提交数据库

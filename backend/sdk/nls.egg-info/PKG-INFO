@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: nls
+Version: 0.0.1
+Summary: python sdk for nls
+Home-page: https://github.com/..
+Author: jiaqi.sjq
+Author-email: jiaqi.sjq@alibaba-inc.com
+License: Apache License 2.0
+Keywords: nls,sdk
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# alibaba-nls-python-sdk
+
+This is Python SDK for NLS. It supports
+SPEECH-RECOGNIZER/SPEECH-SYNTHESIZER/SPEECH-TRANSLATOR/COMMON-REQUESTS-PROTO.
+
+This module works on Python versions:
+> 3.6 and greater
+
+install requirements:
+> python -m pip install -r requirements.txt
+
+install package:
+> python -m pip install .
+
+

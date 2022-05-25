@@ -78,6 +78,7 @@ def login():
         # 此时的 U 表示的就是用户对象
         if u.password == password:
             apps.ocr.uid = u.id
+            apps.listen.uid=u.id
             res = {
                 "code": 201,
                 "data": {
@@ -85,6 +86,7 @@ def login():
                     "name": u.username,
                     "password": u.password,
                     "email": u.email,
+                    'ip': request.remote_addr,
                     "tags": "登录成功"
                 }
             }
