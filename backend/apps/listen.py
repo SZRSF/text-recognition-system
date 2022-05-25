@@ -7,9 +7,9 @@ from flask import Blueprint
 listen_bp = Blueprint('listen', __name__)
 
 URL = "wss://nls-gateway.cn-shanghai.aliyuncs.com/ws/v1"
-AKID = "LTAI5t6fq9nRwt8FVYS9bpS6"
-AKKEY = "B3mtT8a6aNx45W3xV1MVNrv1yn0f9t"
-APPKEY = "W7LavLPl8y2FuzjS"
+AKID = ""
+AKKEY = "t"
+APPKEY = ""
 
 # TEXT = '大壮正想去摘取花瓣，谁知阿丽和阿强突然内讧，阿丽拿去手枪向树干边的阿强射击，两声枪响，阿强直接倒入水中'
 global uid
