@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify, render_template
 
+import apps.ocr
 from apps.model import User
 from ext import db
 
@@ -72,9 +73,11 @@ def login():
     # 查询
     user_list = User.query.filter_by(username=username)
     print(user_list)
+
     for u in user_list:
         # 此时的 U 表示的就是用户对象
         if u.password == password:
+            apps.ocr.uid = u.id
             res = {
                 "code": 201,
                 "data": {
