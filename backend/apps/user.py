@@ -82,6 +82,7 @@ def login():
                     "name": u.username,
                     "password": u.password,
                     "email": u.email,
+                    'ip': request.remote_addr,
                     "tags": "登录成功"
                 }
             }

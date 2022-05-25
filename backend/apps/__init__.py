@@ -1,6 +1,6 @@
 from flask import Flask
 
-
+from apps.listen import listen_bp
 from apps.ocr import ocr_bp
 from apps.user import user_bp
 from ext import db
@@ -15,4 +15,5 @@ def create_app():
     # 注册蓝图
     app.register_blueprint(user_bp)
     app.register_blueprint(ocr_bp)
+    app.register_blueprint(listen_bp)
     return app

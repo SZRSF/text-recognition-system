@@ -12,6 +12,8 @@ import numpy as np
 from PIL import Image
 from flask import Blueprint, request, json
 
+from apps.listen import multiruntest
+
 ocr_bp = Blueprint('ocr', __name__)
 
 # 定义一个目录用于保存图片
@@ -71,4 +73,7 @@ def general_ocr():
     # 就可以按key取值了
     result = jos['content']
     print('识别的结果：', result)
+    txt = result
+    multiruntest(txt)
+
     return json.dumps(result),200
